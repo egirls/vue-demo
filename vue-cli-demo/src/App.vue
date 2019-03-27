@@ -1,13 +1,17 @@
 <template>
   <div id="app">
     <Navigation :counter = "count" />
-    <Content  :count = "count" />
+    <router-view>
+      <Content  :count = "count" />
+      <Content2 />
+    </router-view>
   </div>
 </template>
 
 <script>
 import Navigation from './components/Navigation.vue'
 import Content from './components/Content.vue'
+import Content2 from './components/Content2.vue'
 
 export default {
   name: 'app',
@@ -21,7 +25,9 @@ export default {
   //组件
   components: {
     Navigation,
-    Content
+    Content,
+    Content2
   }
+
 }
 </script>

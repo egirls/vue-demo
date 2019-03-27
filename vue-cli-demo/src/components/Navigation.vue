@@ -1,9 +1,13 @@
 <template>
 	<div>
 		<ul class="wrap">
-			<li id="first" class="left nav" @click="onClick(cou)"> {{counter}} </li>
-			<li class="mid nav"> {{cou}} </li>
-			<li class="right nav"> 3 </li>
+			<li id="first" class="left nav"> 
+			    <router-link to="/home">Home </router-link>
+		    </li>
+			<li class="mid nav"> 
+			    <router-link to="/page">page{{cou}} </router-link> 
+			</li>
+			<li class="right nav" @click="onClick(cou)"> {{counter}} </li>
 		</ul>
 	</div>
 </template>
