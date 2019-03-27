@@ -21,7 +21,7 @@
 		},
 
 		methods: {
-			onClick: function(cou) {
+			onClick(cou) {
 				return this.cou ++;
 			}
 		}
