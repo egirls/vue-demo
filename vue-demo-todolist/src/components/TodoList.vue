@@ -1,7 +1,7 @@
 <template>
   <div>
     <span>TodoList</span>
-    <input @keyup.enter="addNewItem" v-model="newItem"/>
+    <input v-on:keyup.enter="addNewItem" v-model="newItem"/>
     <ul>
       <li
         v-for="item in items"
