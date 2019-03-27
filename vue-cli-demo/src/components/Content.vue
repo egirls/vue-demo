@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<input laceholder="edit me" />
+		<input placeholder="edit me" />
 		{{count}}
 	</div>
 </template>
