@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<ul class="wrap">
-			<li id="first" class="left nav" @click="onClick"> {{counter}} </li>
-			<li class="mid nav"> 2 </li>
+			<li id="first" class="left nav" @click="onClick(cou)"> {{counter}} </li>
+			<li class="mid nav"> {{cou}} </li>
 			<li class="right nav"> 3 </li>
 		</ul>
 	</div>
@@ -13,13 +13,16 @@
 		name: 'Navigation',
 		data(){
 			return {
-				counter: 0
+				cou: this.counter
 			};
+		},
+		props: {
+			counter: Number
 		},
 
 		methods: {
-			onClick: () => {
-				console.log('dsg');
+			onClick: function(cou) {
+				return this.cou ++;
 			}
 		}
 	}

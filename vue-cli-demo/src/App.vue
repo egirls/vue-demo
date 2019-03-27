@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navigation :count = "count" />
+    <Navigation :counter = "count" />
     <Content  :count = "count" />
   </div>
 </template>
