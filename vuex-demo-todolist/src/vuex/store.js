@@ -24,8 +24,8 @@ export default new Vuex.Store({
 	},
 
 	getters: {
-        doneTodos: (state) => {
-        	const doneTodos = state.todos.filter(todo => todo.isFinished);
+      doneTodos: (state) => {
+        const doneTodos = state.todos.filter(todo => todo.isFinished);
 		    return doneTodos;
 	    },
 

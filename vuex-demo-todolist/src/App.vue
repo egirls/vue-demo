@@ -4,16 +4,23 @@
     <br />
     <span>TodoList</span>
     <input v-on:keyup.enter="addNewItem" v-model="newItem"/>
-    <router-view/>
+    <router-view :key="key"/>
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
+
   data () {
     return {
       newItem: null
+    }
+  },
+
+  computed: {
+    key () {
+      return this.$route.name !==  undefined ? this.$route.name + + new Date() : this.$route + + new Date()
     }
   },
 
