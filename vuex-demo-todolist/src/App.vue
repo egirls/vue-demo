@@ -5,31 +5,33 @@
     <span>TodoList</span>
     <input v-on:keyup.enter="addNewItem" v-model="newItem"/>
     <router-view :key="key"/>
-  </div>
+</div>
 </template>
 
 <script>
-export default {
-  name: 'App',
+    export default {
+      name: 'App',
 
-  data () {
-    return {
-      newItem: null
-    }
+      data () {
+        return {
+          newItem: null
+      }
   },
 
   computed: {
     key () {
-      return this.$route.name !==  undefined ? this.$route.name + + new Date() : this.$route + + new Date()
-    }
-  },
+      return this.$route.name !==  undefined
+      ?this.$route.name + + new Date()
+      :this.$route + + new Date()
+  }
+},
 
-  methods: {
+methods: {
     addNewItem () {
       const newTodo = {message: this.newItem, isFinished: false};
-      this.$store.commit('ADDTODO',newTodo);
+      this.$store.dispatch('addTodo',newTodo);
       this.newItem = ''
-    }
   }
+}
 }
 </script>

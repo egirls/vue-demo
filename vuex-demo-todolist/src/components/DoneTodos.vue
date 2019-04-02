@@ -1,33 +1,35 @@
 <template>
-  <div>
-  已完成：   
-    <ul>
-      <li
-        v-for="(item,itemKey) in doneTodos"
-        :key="itemKey">
-        {{item.message}}
-      </li>
-    </ul>
-    <router-link to='/'>全部</router-link>
-  </div>
+    <div>
+        已完成：
+        <ul>
+            <li v-for="(item,itemKey) in doneTodos" :key="itemKey">
+                {{item.message}}
+            </li>
+        </ul>
+        <router-link to='/'>全部</router-link>
+    </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  name: 'TodoList',
-  data () {
-    return {
-      doneTodos: this.$store.getters.doneTodos
+    name: 'TodoList',
+
+    computed: {
+        ...mapGetters([
+            'doneTodos'
+        ]),
+    },
+
+    methods: {
+
     }
-  },
-
-  methods: {
-
-  }
 }
-</script>
 
+</script>
 <style>
-  .finished {
+.finished {
     text-decoration: line-through;
-  }
+}
+
 </style>
