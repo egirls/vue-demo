@@ -1,11 +1,11 @@
 <template>
   <div>
-    404
+    404 Not Found
   </div>
 </template>
 <script>
 export default {
-  name: '404',
+  name: 'PageNotFound',
   props: {},
   methods: {}
 }

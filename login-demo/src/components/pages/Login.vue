@@ -17,6 +17,8 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Login',
   data () {
@@ -28,9 +30,21 @@ export default {
     }
   },
   props: {},
+  computed: {
+    ...mapGetters([
+      'userRole'
+    ])
+  },
   methods: {
     onSubmit () {
-      console.log('submit')
+      const userName = this.form.name
+      const userPassword = this.form.password
+
+      if (userName.length === 0 || userPassword.length === 0) {
+        console.log('用户名或密码为空')
+      } else if (this.userRole === '管理员') {
+        this.$router.push('/')
+      }
     }
   }
 }
@@ -40,4 +54,5 @@ export default {
 .el-form {
   margin-top: 5%;
 }
+
 </style>

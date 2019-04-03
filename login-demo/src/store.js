@@ -21,11 +21,15 @@ export default new Vuex.Store({
       date: '2016-05-03',
       name: '王小虎',
       address: '上海市普陀区金沙江路 1516 弄'
-    }]
+    }],
+    userRole: '管理员'
   },
   getters: {
     allMessage: (state) => {
       return state.tableData
+    },
+    userRole: (state) => {
+      return state.userRole
     }
   },
   mutations: {

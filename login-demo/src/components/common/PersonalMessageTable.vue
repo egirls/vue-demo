@@ -1,5 +1,5 @@
 <template>
-  <el-table :data="allMessage" style="width: 100%">
+  <el-table :data="allMessage" style="width: 100%" v-if="userRole==='管理员'">
     <el-table-column prop="date" label="日期" width="180">
     </el-table-column>
     <el-table-column prop="name" label="姓名" width="180">
@@ -20,7 +20,8 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters([
-      'allMessage'
+      'allMessage',
+      'userRole'
     ])
   },
   methods: {
