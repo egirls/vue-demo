@@ -18,6 +18,7 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
+import jwtDecode from 'jwt-decode'
 
 export default {
   name: 'Login',
@@ -43,6 +44,12 @@ export default {
       if (userName.length === 0 || userPassword.length === 0) {
         console.log('用户名或密码为空')
       } else if (this.userRole === '管理员') {
+        const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmb28iOiJiYXIiLCJleHAiOjEzOTMyODY4OTMsImlhdCI6MTM5MzI2ODg5M30.4-iaDojEVl0pJQMjrbM1EzUIfAZgsbK_kgnVyVxFSVo'
+
+        const message = jwtDecode(token)
+
+        localStorage.setItem('message', message)
+
         this.$router.push('/')
       }
     }
