@@ -9,14 +9,15 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [{
     path: '/',
-    component: () => import('./components/common/Content.vue'),
+    component: () => import('./components/pages/Frame.vue'),
     children: [{
       path: '',
       name: 'Home',
       component: () => import('./components/common/Home.vue'),
       beforeEnter (to, from, next) {
         const userRole = store.state.userRole
-        if (userRole === 'user') {
+        console.log(userRole)
+        if (userRole === '管理员') {
           next()
         } else {
           next({
@@ -27,7 +28,7 @@ export default new Router({
     },
     {
       path: 'personal-message-table',
-      name: 'PersonalMessageTßable',
+      name: 'PersonalMessageTable',
       component: () => import('./components/common/PersonalMessageTable.vue')
     }
     ]

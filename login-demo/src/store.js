@@ -22,7 +22,7 @@ export default new Vuex.Store({
       name: '王小虎',
       address: '上海市普陀区金沙江路 1516 弄'
     }],
-    userRole: 'user'
+    userRole: '管理员'
   },
   getters: {
     allMessage: (state) => {
