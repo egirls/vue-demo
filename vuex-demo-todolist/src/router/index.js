@@ -6,16 +6,15 @@ import DoneTodos from '@/components/DoneTodos.vue'
 Vue.use(Router);
 
 export default new Router({
-    routes: [
-        {
-            path: '/',
-            name: 'TodoList',
-            component: TodoList,
-        },
-        {
-        	path: '/completed-todos',
-        	name: 'DoneTodos',
-        	component: DoneTodos
-        }
-    ],
+  routes: [{
+      path: '/',
+      name: 'TodoList',
+      component: TodoList,
+    },
+    {
+      path: '/completed-todos',
+      name: 'DoneTodos',
+      component: DoneTodos
+    }
+  ],
 });

@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from './store.js'
 
-Vue.use(Router)
+Vue.use(Router, store)
 
 export default new Router({
   mode: 'history',
@@ -12,7 +13,17 @@ export default new Router({
     children: [{
       path: '',
       name: 'Home',
-      component: () => import('./components/common/Home.vue')
+      component: () => import('./components/common/Home.vue'),
+      beforeEnter (to, from, next) {
+        const userRole = store.state.userRole
+        if (userRole === 'user') {
+          next()
+        } else {
+          next({
+            path: '/login'
+          })
+        }
+      }
     },
     {
       path: 'personal-message-table',
