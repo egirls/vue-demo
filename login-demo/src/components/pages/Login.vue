@@ -49,6 +49,7 @@ export default {
         const message = jwtDecode(token)
 
         localStorage.setItem('message', message)
+        localStorage.token = token
 
         this.$router.push('/')
       }
