@@ -30,6 +30,16 @@ export default new Router({
       path: 'personal-message-table',
       name: 'PersonalMessageTable',
       component: () => import('./components/common/PersonalMessageTable.vue')
+    },
+    {
+      path: 'theChart',
+      name: 'TheChart',
+      component: () => import('./components/common/TheChart.vue')
+    },
+    {
+      path: 'theECharts',
+      name: 'TheECharts',
+      component: () => import('./components/common/TheECharts.vue')
     }
     ]
   },
